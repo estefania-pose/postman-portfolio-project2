@@ -1,0 +1,225 @@
+{
+  "info": {
+    "name": "DummyJson",
+    "description": "Colección de endpoints probados con Postman sobre la API pública DummyJson (https://dummyjson.com)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Dummy",
+      "item": [
+        {
+          "name": "POST /auth/login autenticacion",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"emilys\",\n  \"password\": \"emilyspass\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "basic",
+              "basic": [
+                { "key": "username", "value": "", "type": "string" },
+                { "key": "password", "value": "", "type": "string" }
+              ]
+            },
+            "url": {
+              "raw": "https://dummyjson.com/products",
+              "protocol": "https",
+              "host": ["dummyjson", "com"],
+              "path": ["products"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /products/1 ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/products/search?q=phone",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/search?q=phone",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "search"],
+              "query": [
+                { "key": "q", "value": "phone" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "products?limit=5 — Paginación",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products?limit=5",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"],
+              "query": [
+                { "key": "limit", "value": "5" }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Agregar nuevo producto",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Nuevo Producto Test\",\n  \"price\": 29.99,\n  \"stock\": 100,\n  \"category\": \"smartphones\",\n  \"description\": \"Producto creado para pruebas de portfolio\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/add",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar producto completo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Producto Actualizado\",\n  \"price\": 99.99,\n  \"stock\": 50\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar solo un campo",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 19.99\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar producto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 19.99\n}",
+              "options": { "raw": { "language": "text" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "agregar nuevo usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Juan\",\n  \"lastName\": \"Perez\",\n  \"age\": 25,\n  \"email\": \"juan.perez@test.com\",\n  \"username\": \"juanperez99\",\n  \"password\": \"juan1234\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/add",
+              "host": ["{{baseUrl}}"],
+              "path": ["users", "add"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "agregar carrito",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"products\": [\n    { \"id\": 1, \"quantity\": 2 },\n    { \"id\": 3, \"quantity\": 1 }\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/carts/add",
+              "host": ["{{baseUrl}}"],
+              "path": ["carts", "add"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dummyjson.com",
+      "type": "string"
+    }
+  ]
+}
