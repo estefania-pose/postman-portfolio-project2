@@ -17,7 +17,7 @@ Practicar y documentar el uso de los principales métodos HTTP (GET, POST, PUT, 
 | Archivo | Descripción |
 |---|---|
 | `DummyJson.postman_collection.json` | Colección de Postman (formato v2.1) lista para importar, con todos los requests, bodies y la variable `baseUrl`. |
-| `DummyJson-API-Docs.md` | Documentación legible de cada endpoint: método, URL, query params y body de ejemplo. |
+| `DummyJson-API-Docs.md` | Documentación legible de cada endpoint: método, URL, query params, body de ejemplo y evidencias. |
 
 ## 🔍 Endpoints cubiertos
 
